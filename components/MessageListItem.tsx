@@ -2,6 +2,7 @@ import {Message} from "../types";
 import styled from "styled-components";
 import {useMoralis} from "react-moralis";
 import {Avatar} from "./Avatar";
+import TimeAgo from "timeago-react";
 
 type Props = {
     message: Message
@@ -19,6 +20,7 @@ export const MessageListItem = (props: Props) => {
         return (
             <Container>
                 <TextAndAvatar>
+                    <TimeAgo datetime={message.createdAt} />
                     <UserMessage>{message.text}</UserMessage>
                     <Avatar username={message.username} isBig={false} />
                 </TextAndAvatar>
@@ -31,6 +33,7 @@ export const MessageListItem = (props: Props) => {
             <TextAndAvatar>
                 <Avatar username={message.username} isBig={false} />
                 <OtherMessage>{message.text}</OtherMessage>
+                <TimeAgo datetime={message.createdAt} />
             </TextAndAvatar>
             <Username>{message.username}</Username>
         </Container>
@@ -43,6 +46,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
+  color: pink;
 `
 const TextAndAvatar = styled.div`
   width: 100%;
@@ -60,6 +64,7 @@ const UserMessage = styled.span`
   border-bottom-right-radius: 0;
   padding: 10px;
   margin-right: 5px;
+  margin-left: 5px;
 `
 const OtherMessage = styled.span`
   min-width: 100px;
@@ -69,6 +74,7 @@ const OtherMessage = styled.span`
   border-bottom-left-radius: 0;
   padding: 10px;
   margin-left: 5px;
+  margin-right: 5px;
 `
 const Username = styled.div`
   font-size: 0.7rem;
