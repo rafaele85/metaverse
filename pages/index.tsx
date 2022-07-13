@@ -40,4 +40,10 @@ const Container = styled.div`
 const Page = styled.div`
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #340534;
+  color: white;
 `
