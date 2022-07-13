@@ -31,7 +31,7 @@ const AvatarContainer = styled.div<{size: number}>`
   height: ${p => p.size}px;
   max-width: ${p => p.size}px;
   max-height: ${p => p.size}px;
-  border: 2px solid pink;
+  border: 4px solid pink;
   border-radius: 100%;
   padding: 4px;
   &:hover {

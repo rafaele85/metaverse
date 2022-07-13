@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {useMoralis} from "react-moralis";
 import {Avatar} from "./Avatar";
+import {UsernameComponent} from "./UsernameComponent";
 
 export const Header = () => {
     const { user, logout } = useMoralis()
@@ -13,8 +14,8 @@ export const Header = () => {
     return (
         <Container>
             <h1> Welcome to Metaverse </h1>
-            <h2> {username} </h2>
             <Avatar onClick={handleLogout} isBig={true} username={username}/>
+            <UsernameComponent username={username}  />
         </Container>
     )
 }
